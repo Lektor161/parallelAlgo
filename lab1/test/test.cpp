@@ -51,3 +51,18 @@ TEST(Stress, Big) {
         test_qsort(vec);
     }
 }
+
+TEST(Stress, VeryBig) {
+    const size_t AMOUNT = 10;
+    const size_t SIZE = 1000000;
+
+    std::mt19937 gen;
+
+    for (size_t i = 0; i < AMOUNT; ++i) {
+        std::vector<int> vec(SIZE);
+        for (size_t j = 0; j < SIZE; ++j) {
+            vec[j] = gen();
+        }
+        test_qsort(vec);
+    }
+}
