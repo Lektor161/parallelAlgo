@@ -5,7 +5,8 @@ project(lab1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
 
-add_executable(bench perf/benchmark.cpp perf/qsort.cpp perf/qsort.h src/utils.cpp src/utils.h)
+add_executable(bench perf/benchmark.cpp src/utils.cpp)
+add_executable(test test/test.cpp src/utils.cpp)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -31,3 +32,4 @@ FetchContent_MakeAvailable(
 )
 
 target_link_libraries(bench PRIVATE TBB::tbb benchmark::benchmark)
+target_link_libraries(test PRIVATE TBB::tbb benchmark::benchmark GTest::gtest_main)

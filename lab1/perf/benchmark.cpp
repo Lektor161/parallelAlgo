@@ -23,17 +23,17 @@ static void bench_quicksort(benchmark::State& state, std::function<void(std::vec
 
 static void bench_seq(benchmark::State& state) {
     bench_quicksort(state, [](std::vector<int> vec) {
-        quicksort_utils::seqQuickSort(vec, 0, vec.size());
+        quicksort_utils::seqQuickSort(vec, 0, vec.size() - 1);
     });
 }
 
 static void bench_par(benchmark::State& state) {
     bench_quicksort(state, [](std::vector<int> vec) {
-        quicksort_utils::parQuickSort(vec, 0, vec.size());
+        quicksort_utils::parQuickSort(vec, 0, vec.size() - 1);
     });
 }
 
-BENCHMARK(bench_seq) -> Iterations(1) -> UseRealTime();
-BENCHMARK(bench_par) -> Iterations(1) -> UseRealTime();
+BENCHMARK(bench_seq) -> Iterations(4) -> UseRealTime();
+BENCHMARK(bench_par) -> Iterations(4) -> UseRealTime();
 
 BENCHMARK_MAIN();
