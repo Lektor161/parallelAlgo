@@ -1,0 +1,14 @@
+2022-12-12T19:12:54+03:00
+Running build/bench
+Run on (8 X 2800 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB
+  L1 Instruction 32 KiB
+  L2 Unified 256 KiB (x4)
+  L3 Unified 6144 KiB
+Load Average: 3.28, 2.40, 2.71
+---------------------------------------------------------------------------
+Benchmark                                 Time             CPU   Iterations
+---------------------------------------------------------------------------
+bench_seq/iterations:1/real_time     709500 ns       708000 ns            1
+bench_par/iterations:1/real_time    2155904 ns      1844000 ns            1
