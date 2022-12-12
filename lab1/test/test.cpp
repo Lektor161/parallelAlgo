@@ -39,7 +39,7 @@ TEST(Unit, RepeatingValues) {
 
 TEST(Stress, Big) {
     const size_t AMOUNT = 1000;
-    const size_t SIZE = 1;
+    const size_t SIZE = 1000;
 
     std::mt19937 gen;
 
